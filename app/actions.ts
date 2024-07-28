@@ -1,7 +1,9 @@
 "use server";
 
+import { HOST } from "./constants";
+
 export async function registerUser() {
-  const res = await fetch("http://localhost:3000/api");
+  const res = await fetch(`${HOST}/api`);
 
   const response = await res.json();
 
