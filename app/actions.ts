@@ -8,7 +8,7 @@ export async function registerUser() {
   const response = await res.json();
 
   if (!res.ok) {
-    throw new Error(response.message);
+    return { error: response.message };
   }
 
   return response;

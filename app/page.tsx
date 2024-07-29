@@ -6,12 +6,10 @@ import { registerUser } from "./actions";
 
 export default function Home() {
   const handleClick = async () => {
-    try {
-      await registerUser();
-    } catch (error) {
-      if (error instanceof Error) {
-        toast(error.message);
-      }
+    const res = await registerUser();
+
+    if (res.error) {
+      toast(res.error);
     }
   };
 
